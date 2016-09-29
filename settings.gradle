@@ -1,0 +1,3 @@
+rootProject.name = "done"
+
+include 'applications/done-api'
