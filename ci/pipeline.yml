@@ -1,0 +1,13 @@
+resources:
+- name: done-source
+  type: git
+  source:
+    uri: https://github.com/geapi/done
+    branch: master
+
+jobs:
+- name: test-done
+  plan:
+  - get: done-source
+  - task: test-done
+    file: done-source/ci/test-done.yml
