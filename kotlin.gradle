@@ -2,6 +2,7 @@ apply plugin: 'kotlin'
 
 repositories {
     mavenCentral()
+    jcenter()
     maven {
         url "http://repository.jetbrains.com/all"
     }
@@ -9,4 +10,7 @@ repositories {
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+
+    testCompile "io.damo.aspen:aspen-spring:$aspenVersion"
+    testCompile "org.hamcrest:java-hamcrest:$hamcrestVersion"
 }

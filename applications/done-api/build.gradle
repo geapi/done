@@ -3,6 +3,8 @@ apply from: "../../kotlin.gradle"
 apply plugin: 'spring-boot'
 
 dependencies {
-    compile('org.springframework.boot:spring-boot-starter-web')
-    testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile "com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonVersion"
+
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
 }
