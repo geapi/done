@@ -1,3 +1,7 @@
 rootProject.name = "done"
 
 include 'applications/done-api'
+
+include 'components/todo-api'
+include 'components/todo-data-redis'
+include 'components/redis-testing'

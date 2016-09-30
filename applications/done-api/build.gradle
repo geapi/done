@@ -1,10 +1,15 @@
 apply from: "../../kotlin.gradle"
 
-apply plugin: 'spring-boot'
+apply plugin: "spring-boot"
 
 dependencies {
-    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile project(":components/todo-api")
+    compile project(":components/todo-data-redis")
+
+    compile "org.springframework.boot:spring-boot-starter-web"
+    compile "org.springframework.boot:spring-boot-starter-data-redis"
     compile "com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonVersion"
 
-    testCompile 'org.springframework.boot:spring-boot-starter-test'
+    testCompile "org.springframework.boot:spring-boot-starter-test"
+    testCompile project(":components/redis-testing")
 }

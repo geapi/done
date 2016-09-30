@@ -1,0 +1,9 @@
+apply from: "../../kotlin.gradle"
+
+dependencies {
+    compile project(":components/todo-api")
+
+    compile "org.springframework.data:spring-data-redis:$springDataRedisVersion"
+
+    testCompile project(":components/redis-testing")
+}

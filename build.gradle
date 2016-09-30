@@ -6,8 +6,11 @@ buildscript {
     ext {
         kotlinVersion = "1.0.4"
         springBootVersion = "1.4.1.RELEASE"
+        springVersion = "4.3.3.RELEASE"
+        springDataRedisVersion = "1.7.3.RELEASE"
         aspenVersion = "2.0.0"
         jacksonVersion = "2.7.4"
+
     }
     repositories {
         mavenCentral()
