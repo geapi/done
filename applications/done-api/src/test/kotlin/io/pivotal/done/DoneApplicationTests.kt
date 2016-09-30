@@ -10,9 +10,9 @@ import org.springframework.boot.test.web.client.TestRestTemplate
 import org.springframework.http.HttpEntity
 import org.springframework.http.HttpMethod.POST
 
-import org.hamcrest.MatcherAssert.assertThat
-import org.hamcrest.Matchers.equalTo
 import org.springframework.http.HttpStatus
+
+import org.assertj.core.api.Assertions.assertThat
 
 @RunWith(SpringTestTreeRunner::class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
@@ -20,12 +20,12 @@ class DoneApplicationTests : Test({
 
     val testRestTemplate: TestRestTemplate = inject("testRestTemplate")
 
-    describe("creating a todo") {
-        test {
-            val response = testRestTemplate.exchange("/todo", POST, HttpEntity(Todo("walk the dog")), Todo::class.java)
+    test("creating a todo") {
+        val expectedTodo = Todo("walk the dog")
 
-            assertThat(response.statusCode, equalTo(HttpStatus.CREATED))
-        }
+        val response = testRestTemplate.exchange("/todo", POST, HttpEntity(expectedTodo), Todo::class.java)
+
+        assertThat(response.statusCode).isEqualTo(HttpStatus.CREATED)
+        assertThat(response.body).isEqualTo(expectedTodo)
     }
-
 })

@@ -12,5 +12,5 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
 
     testCompile "io.damo.aspen:aspen-spring:$aspenVersion"
-    testCompile "org.hamcrest:java-hamcrest:$hamcrestVersion"
+    testCompile 'org.assertj:assertj-core:3.5.2'
 }
